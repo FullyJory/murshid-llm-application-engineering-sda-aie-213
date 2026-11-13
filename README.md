@@ -1,66 +1,136 @@
-# Murshid Mini · LLM Application Engineering
+<div align="center">
 
-**Four days. One notebook. One cumulative project.**
+# Murshid Mini
+### LLM Application Engineering · SDA-AIE-213
 
-Training program: **LLM Application Engineering · SDA-AIE-213**  
-Instructor: **Meaad Al-Marri**  
-Level: beginner to intermediate, with basic Python familiarity  
-Daily schedule: 150 minutes training and activities, 30 minutes prayer breaks, 60 minutes lab. Prayer breaks follow local times.
+**Build from scratch. Keep one notebook. Finish one project.**
 
-Build a tiny fictional service assistant from scratch using Python's standard library. Learn how an application validates inputs, structures a ticket, calls a read-only tool, checks ownership, tests behavior, and safely caches public answers. Day 4 completes the same project started on Day 1; there is no separate capstone.
+A guided four-day learning journey by **Meaad Al-Marri**
 
-> **Honest scope:** `mode=mock`. FakeClient is a deterministic rule-based simulator, **not a language model**. There are no paid APIs, keys, packages, GPU requirements, model downloads, or real personal data. The prompt is a teaching artifact, not instructions executed by a model. This lab teaches application engineering, not model training, live LLM quality, or production security.
+[Start learning](#start-here) · [Daily labs](#your-four-day-roadmap) · [Video learning path](docs/videos.md) · [Expected results](expected/README.md) · [Submit your project](docs/git.md)
+
+</div>
+
+---
+
+## What you will build
+
+A small fictional service assistant that answers known service questions, reads application status through an authorized tool, rejects unsuitable inputs, tests its behavior and caches public answers safely. Each day extends the **same project in the same saved Colab notebook**. Day 4 completes that project; there is no separate capstone.
+
+| Learning level | Time | Environment | Cost |
+|---|---|---|---|
+| Beginner to intermediate; basic Python familiarity | 4 days × 4 hours, including prayer breaks and a daily 1-hour lab | Google Colab · Python 3 · CPU | No paid API, key, GPU, model download or extra package |
+
+> **Know what this project is:** `mode=mock`. `FakeClient` is a finite, deterministic simulator, **not a live language model**. You are learning the engineering around an LLM-shaped interface. The notebook does not train a model, assess live LLM quality or implement production security. All data is synthetic.
 
 ## Start here
 
-1. Read [Setup and recovery](docs/setup.md).
-2. Open [Google Colab](https://colab.research.google.com/) and create **one blank notebook** named `murshid_your_name.ipynb`.
-3. Choose Python 3 with **CPU / no hardware accelerator**. No installation cell is needed.
-4. Follow [Day 1](docs/day-1.md). Copy or type its labeled code cells in order from [day1.py](labs/day1.py), understand them, and run each one.
-5. **Keep the same saved notebook for all four days.** Append Day 2, Day 3, and Day 4 cells below your previous cells. Do not start a new notebook each day.
-6. Save your notebook to your own Google Drive. At the end of each day download a `.ipynb` backup and the JSON outputs from the Colab Files panel. On the next day reopen your saved copy, not a fresh reference copy.
+**New to Python, Colab or GitHub?** Begin with the [ordered video learning path](docs/videos.md), then return here. Videos are optional preparation and reinforcement, not extra graded work or prerequisites involving paid services.
 
-The Colab notebook contains **code cells only**. All explanations, instructions, slide mappings and expected outcomes live here on GitHub. Code comments label days and cells; printed results appear beneath the code when run.
+1. **Prepare:** read [Setup and recovery](docs/setup.md). Use Python 3 with CPU/no accelerator. Nothing needs installing.
+2. **Create once:** open [Google Colab](https://colab.research.google.com/) and create a blank notebook named `murshid_your_name.ipynb`. Save it in your own Drive.
+3. **Build Day 1:** open the [Day 1 guide](docs/day-1.md) beside Colab. Add its labeled code blocks one at a time; predict, run, inspect and explain the result.
+4. **Keep building:** return to **your original saved notebook** each day. Append the next day's cells below the earlier ones. Do not create four projects or overwrite your progress with the reference.
+5. **Save evidence:** download your notebook and the day's JSON outputs before leaving. Commit each milestone to your own repository with a meaningful message.
 
-[Open reference in Colab](https://colab.research.google.com/github/almiyead-rgb/murshid-llm-application-engineering-sda-aie-213/blob/main/notebooks/murshid.ipynb) · [Complete reference notebook](notebooks/murshid.ipynb) · [Expected results](expected/README.md) · [Technical documentation](docs/technical.md) · [Dataset card](data/README.md) · [Submission and Git guidance](docs/git.md)
+**GitHub is your learning guide; Colab is your code workspace.** Explanations, slide mappings, dataset documentation and expected results stay here. The notebook uses code cells only, with short code comments and printed outputs.
 
-The complete reference notebook is for checking or recovery; do not run later days before building and explaining their components. To open it in Colab, use **File → Open notebook → GitHub** and paste this repository URL, then select `notebooks/murshid.ipynb` and save your own copy. This optional shortcut does not change the one-notebook rule.
+<details>
+<summary><strong>Need the complete reference for comparison or recovery?</strong></summary>
 
-## The four stages
+[Open the reference in Colab](https://colab.research.google.com/github/almiyead-rgb/murshid-llm-application-engineering-sda-aie-213/blob/main/notebooks/murshid.ipynb) · [View it on GitHub](notebooks/murshid.ipynb)
 
-| Day | Build in the same notebook | Cells | Expected milestone | Guide |
+Save your own copy before editing. Use this to check work or recover a broken cell, not to skip building the stages. Only run through the day you are studying. If the link does not open, in Colab choose File → Open notebook → GitHub, paste this repository URL, select `notebooks/murshid.ipynb`, and save your copy.
+
+</details>
+
+## Your four-day roadmap
+
+Slides 1–16 provide concepts and activities; slides 17–20 guide the day's lab. Each guide maps its steps to the relevant slide ranges in the final **20-slides-per-day** course content.
+
+| Day | Build today | Notebook cells | Guide and code | Compare your result |
 |---|---|---:|---|---|
-| 1 | Dataset, FakeClient, `ask`, baseline validation | 1–3 | Three known answers; empty input does not call the mock | [Day 1](docs/day-1.md) |
-| 2 | Structured ticket, validation, read-only status tool | 4–6 | Five scenarios; no unauthorized status disclosure or mutation | [Day 2](docs/day-2.md) |
-| 3 | Versioned prompt, guards, pipeline, golden tests | 7–10 | 10/10 specified behavioral tests | [Day 3](docs/day-3.md) |
-| 4 | Public exact cache, measurements, regression and export | 11–14 | 3→1 mock calls; hits `[false,true,true]`; complete report | [Day 4](docs/day-4.md) |
+| **1 · Foundations** | Synthetic directory, mock client, `ask`, response contract | 1–3 | [Guide](docs/day-1.md) · [Code](labs/day1.py) | [Three known answers](expected/baseline_results.json); blank input adds no mock call |
+| **2 · Structure and tools** | Validated ticket, read-only status lookup, ownership check | 4–6 | [Guide](docs/day-2.md) · [Code](labs/day2.py) | [Five scenarios](expected/day2_results.json); no unauthorized status disclosure or mutation |
+| **3 · Guard and test** | Versioned prompt artifact, guards, pipeline, ten golden cases | 7–10 | [Guide](docs/day-3.md) · [Code](labs/day3.py) | [10/10 fixed behavioral cases](expected/day3_results.json) |
+| **4 · Measure and finish** | Public exact cache, measurements, regression, export | 11–14 | [Guide](docs/day-4.md) · [Code](labs/day4.py) | [3→1 mock calls; 66.7% hits](expected/day4_results.json) · [Final report](expected/final_report.json) |
 
-These are acceptance results for these fixed fixtures, not guarantees about arbitrary inputs. Trace IDs and execution times vary. No real API speed or money savings are claimed.
+**Daily schedule:** 150 minutes of teaching and activities + 30 minutes reserved for two prayer breaks + 60 minutes lab. Actual break positions follow local prayer times. Videos are outside this lab schedule unless the instructor selects an excerpt.
 
-## Learning by building, not just running
+### The learning loop
 
-For each labeled cell: read the day's GitHub explanation, type/copy the code into the next cell in your notebook, predict its output, run it, compare the result, and explain one decision to a partner. Try the small change in the daily guide and rerun tests. A working copied notebook alone is not evidence of understanding.
+**Read → predict → build → run → compare → explain → save.**
 
-Basic variables, dictionaries, functions, and indentation are assumed. Helpers for timing, JSON saving, reference extraction and export are supplied to keep each lab within one hour. No framework or infrastructure setup is required.
+The code is provided in small labeled blocks. Type or copy each block into a new cell, understand it, and test it before continuing. Explain one decision to a partner and document a small change without weakening tests. Helpers for saving JSON, reference extraction, timing and export keep the lab realistic for a one-hour session. Running copied code alone does not demonstrate understanding.
 
-## Local alternative and verification
+## Your learning library
 
-Python 3.9+ is sufficient:
+| I need… | Go to… |
+|---|---|
+| Videos in a sensible order from the basics | [Video learning path](docs/videos.md) |
+| Environment setup, saving or runtime recovery | [Setup and troubleshooting](docs/setup.md) |
+| What the data means and where it comes from | [Dataset card](data/README.md) · [Synthetic data](data/synthetic_data.json) |
+| What the application components do | [Technical documentation](docs/technical.md) |
+| Expected outputs and what may vary | [Results guide](expected/README.md) |
+| How to use Git and prepare my own repository | [Versioning and submission](docs/git.md) |
+| The finished code-only notebook | [Reference notebook](notebooks/murshid.ipynb) |
+| Automated checks | [Tests](tests/test_notebook.py) |
+
+## Understand the dataset before coding
+
+No dataset download is required. The small teaching dataset is embedded in the code:
+
+- A public service directory with an Arabic and an English answer.
+- `REF-1001`, owned by fictional `demo-user-1`, with status `under_review`.
+- `REF-1002`, owned by fictional `demo-user-2`, with status `approved`.
+- `REF-9999`, intentionally absent, for a negative test.
+
+The session fixture is `demo-user-1`. Knowing a reference number does **not** prove ownership. The read-only tool checks the trusted fixture before returning a status. These rules are educational, not real authentication. See the [dataset card](data/README.md) for fields, boundaries and privacy rules. Never add actual ministry records or personal data.
+
+## Compare results honestly
+
+The [reference outputs](expected/README.md) were generated by executing this notebook locally. The test suite passes **8 test methods**, including clean runs, repeated runs, schema checks, ownership, cache versions and expiry. Ten golden cases pass for the fixed synthetic fixtures.
+
+- **Compare:** answer fields, status codes, tool-call counts, pass/fail results and cache-hit sequence.
+- **Do not require exact matches:** UUID trace IDs and Python execution times.
+- **Do not infer:** real LLM quality, comprehensive security, a measured API speedup or actual financial savings.
+
+Google Colab availability and a live Colab session were not validated by these local checks. The implementation uses only standard-library Python to minimize environment issues.
+
+<details>
+<summary><strong>Run tests locally or rebuild the reference notebook</strong></summary>
+
+Use Python 3.9+ from the repository directory:
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-To rebuild the reference notebook after editing lab scripts:
+After editing lab source files:
 
 ```bash
 python tools/build_notebook.py
+python tools/record_reference.py
+python -m unittest discover -s tests -v
 ```
 
-Run code sequentially in a fresh kernel/session. Four scripts share state; do not run Day 2 as a separate Python process without Day 1. See [setup](docs/setup.md) for a one-process local runner.
+Run scripts in one shared process or run notebook cells sequentially; Day 2 depends on Day 1. See [setup](docs/setup.md) for the local runner. Rebuilding clears notebook outputs; `record_reference.py` regenerates observed outputs.
 
-## Student repository requirements
+</details>
 
-Your final repository must include a clear project description, professional README with setup/use instructions, technical documentation, meaningful Git history, training-program attribution, your completed cumulative notebook and results. Use [the checklist](docs/git.md). Include the [SDAIA Academy GitHub account](https://github.com/SDAIAAcademy) where relevant. This course repository does not claim Academy endorsement or certification of the implementation.
+## Finish with a repository you can explain
 
-Support high-quality Saudi technical projects voluntarily: star work you genuinely value, follow relevant accounts, contribute improvements, use issues/forks/pull requests constructively, and share outstanding projects. Social actions are **not graded or required to pass**.
+Use the full [submission checklist](docs/git.md). Your own repository should contain:
+
+- A clear project description and professional README with setup, use and limitations.
+- The one cumulative notebook you built across the four days.
+- Synthetic-data and technical documentation.
+- Your own generated results and honest evaluation report.
+- Meaningful daily Git commits demonstrating progress.
+- Attribution to **LLM Application Engineering · SDA-AIE-213**, instructor **Meaad Al-Marri**, and the relevant [SDAIA Academy GitHub account](https://github.com/SDAIAAcademy).
+
+The generated ZIP contains JSON outputs, **not your notebook**. Download and save the notebook separately. Review all files for private information before sharing. The repository does not claim Academy endorsement or certification of the implementation.
+
+## Contribute to the Saudi technical community
+
+Explore high-quality Saudi projects, star work you genuinely value, follow relevant accounts, contribute useful improvements, open constructive issues and pull requests, fork when appropriate, and share outstanding projects. These are voluntary community activities, **not grading requirements**. Respect each project's contribution guide and license.

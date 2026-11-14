@@ -5,6 +5,80 @@ Create your own project repository on GitHub using a descriptive name, such as `
 
 Before publishing, follow your training provider's visibility instructions and confirm that the contents are safe to share. This project uses synthetic data. Never upload national IDs, real service records, passwords, access tokens, or other people's private information.
 
+## Keep five notebooks, not five versions of the project
+
+Use **one cumulative project notebook** for all four core labs, plus **one separate notebook for each extra homework** you complete. Save each in your own Google Drive. Do not append homework cells to the core project or overwrite one homework with another.
+
+| Work | Suggested Drive filename | Repository destination |
+|---|---|---|
+| Core project, Days 1–4 | `murshid_project_your_name.ipynb` | `notebooks/murshid.ipynb` |
+| Day 1 homework: real model | `day1_real_model_your_name.ipynb` | `homework/day1_real_model.ipynb` |
+| Day 2 homework: tools | `day2_tools_your_name.ipynb` | `homework/day2_tools.ipynb` |
+| Day 3 homework: errors | `day3_errors_your_name.ipynb` | `homework/day3_errors.ipynb` |
+| Day 4 homework: evaluation | `day4_evaluation_your_name.ipynb` | `homework/day4_evaluation.ipynb` |
+
+These are suggested names. Replace `your_name` with your name or an appropriate learner identifier. Homework remains separate optional practice; include the homework you complete without presenting untouched reference solutions as your own work.
+
+## Save your own Colab copies
+
+1. For the core project, create your notebook once on Day 1. Reopen that saved notebook on Days 2–4 and add the new core cells below earlier cells.
+2. For homework, use its day's notebook link. In Colab choose **File → Save a copy in Drive**, then rename the copy using the table. If working from scratch, create a new notebook for that homework and save it under the matching name.
+3. Confirm the name at the top before typing. Use the homework's own runtime/setup instructions; do not install its model packages into your core project's runtime.
+4. Run your code and inspect the output. Save the notebook to Drive. Download it using **File → Download → Download .ipynb**.
+5. Download generated JSON files from the Colab **Files** panel before disconnecting. For homework that only prints a report, retain the visible output in the saved notebook; a separate JSON export is optional. The project's ZIP contains JSON results, not the notebook, so download the `.ipynb` separately.
+
+## Upload everything to your own GitHub repository
+
+Use your own repository, not the instructor's reference repository. One repository can hold the core project and all your completed homework. A suggested structure is:
+
+```text
+murshid-llm-application-engineering/
+  README.md
+  notebooks/
+    murshid.ipynb
+  homework/
+    day1_real_model.ipynb
+    day2_tools.ipynb
+    day3_errors.ipynb
+    day4_evaluation.ipynb
+  results/
+    core/                 # Your daily JSON outputs and final_report.json
+    day1/                 # live_demo_result.json, if completed
+    day4/                 # evaluation_result.json, if completed
+  docs/
+    project-notes.md       # Explain the data, design and how to run
+```
+
+1. Sign into GitHub and create your own repository if you have not already done so. Add a README. Choose visibility according to your training provider's instructions and the privacy of your contents.
+2. Download your saved Colab notebooks to your computer. Organize them into `notebooks`, `homework`, `results` and `docs` folders as above. Rename the downloaded copies to the repository names in the table. Keep the single core notebook at the same path on every update.
+3. Open your repository's **Code** tab and choose **Add file → Upload files**. Drag the prepared folders/files into the upload area. Alternatively, enter the relevant existing repository folder first and upload its files there; check the destination paths before committing.
+4. Inspect every file and saved cell output. Remove secrets, passwords, API keys, tokens, personal identifiers and real service data. Never upload credential files, model weights, package folders or your local virtual environment.
+5. Enter a descriptive commit message, such as `Add Day 2 homework: tool validation`, then choose **Commit changes**. On later days, update the core notebook at its existing path and add the new homework separately. Do not delete and recreate the repository to update it.
+6. Return to the Code tab. Open each uploaded notebook and result file to confirm it is present. If GitHub's notebook preview is unavailable, use the raw/download view or open that file in Colab to inspect it.
+7. Update your README with relative links to your project notebook, completed homework, results and run instructions. Label the core as a mock and the model exercises as actual local model inference. Describe your own observations.
+
+## Submit your repository link to the instructor
+
+Submit the **root link to your own GitHub repository**, not a Colab editing link, a link to your Drive folder, or the instructor's reference repository. A root link has the form `https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`.
+
+Before sending:
+- [ ] The repository contains the cumulative project and every homework item I am submitting.
+- [ ] My README points to each notebook and explains how to run it.
+- [ ] Notebook outputs and reports are from my own execution and contain no secrets or private information.
+- [ ] I copied the URL from my repository's Code page and opened it again to verify the owner and repository name.
+- [ ] The instructor can access the repository. For a public repository, check the link in a signed-out/private browser window. For a private repository, use the instructor's confirmed GitHub account and the training provider's access instructions to grant the required read access, then verify access. Do not make private work public merely to avoid an access problem.
+
+Send the link to **Meaad Al-Marri** through the submission channel she specifies. Follow the deadline she provides; this guide does not set a channel or date. You may use this message:
+
+```text
+Name: [your name]
+Program: LLM Application Engineering — SDA-AIE-213
+Repository: [your own repository URL]
+Submitted work: cumulative project + [list the homework days included]
+```
+
+After sending, keep the same repository link. Make any requested corrections through new commits so the instructor can follow your updates.
+
 ## Required elements
 - [ ] A clear, comprehensive project description.
 - [ ] A professional `README.md` explaining the idea, intended user, scope, and limitations.

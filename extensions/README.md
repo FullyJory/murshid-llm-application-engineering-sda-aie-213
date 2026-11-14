@@ -156,3 +156,8 @@ The exact wording of environment errors can vary by software version. Keep the e
 ## Continue learning
 
 Use [the learning roadmap](OBJECTIVES.md) to connect each activity to your slides, follow [the extension video path](VIDEOS.md), and complete [the self-check](VERIFICATION.md). Course context: **LLM Application Engineering — SDA-AIE-213**; instructor: **Meaad Al-Marri**. [SDAIA Academy on GitHub](https://github.com/SDAIAAcademy). This attribution does not imply endorsement of the implementation.
+
+
+## Save and submit your homework
+
+Save each homework as its **own copy in Google Drive**, separate from your cumulative project. Download the `.ipynb` after running it, upload it to the matching `homework/` location in your own GitHub repository, and include your own results. Use the [suggested filenames and upload instructions](../docs/git.md#keep-five-notebooks-not-five-versions-of-the-project). Submit the root link of that same repository to the instructor through her specified channel, after checking access and removing private information.

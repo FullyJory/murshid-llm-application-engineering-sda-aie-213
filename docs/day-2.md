@@ -101,3 +101,12 @@ The printed JSON reports `mode: "simulated_tool_protocol"`, `passed: 7`, `total:
 These outcomes are deterministic for the supplied inputs. Cases 2–7 are **correct refusals**, not runtime crashes. The call objects are supplied by hand; this exercise teaches Python dispatch and validation, not model-selected tools.
 
 **A successful submission:** your separate notebook, the seven-case output, and an explanation of why validation and authorization are different. If an assertion fails, compare the case's actual dictionary with the table and fix your code without weakening the expected result.
+
+
+### Save, upload, and submit your work
+
+- **Core lab:** save today's changes in your original cumulative project notebook. Update `notebooks/murshid.ipynb` in your own GitHub repository; do not create a new core project each day.
+- **This homework:** use its own Colab notebook and choose **File → Save a copy in Drive**. A suggested name is `day2_tools_your_name.ipynb`. Keep it separate from the core notebook and other homework.
+- Run and save your work, then choose **File → Download → Download .ipynb**. Upload the downloaded homework to `homework/day2_tools.ipynb` in your own repository. Include generated reports where available; keep printed results in your saved notebook.
+- Follow the [step-by-step upload and submission guide](git.md#upload-everything-to-your-own-github-repository). Check filenames, outputs and privacy before committing.
+- Submit your **own repository's root link** to the instructor through her specified channel, after checking that she can open it. Keep the same repository link for later updates. See [the final access checklist](git.md#submit-your-repository-link-to-the-instructor).

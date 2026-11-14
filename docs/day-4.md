@@ -90,3 +90,12 @@ Your report includes `mode: "real_local_model"`, `total: 3`, `external_inference
 The example report's `keyword_hits` is `3`. This counts answers containing both “reference” and “number”; it is **not semantic accuracy**. Keep your actual count even if it differs. Each case also includes input tokens, output tokens including special tokens, and `inference_seconds`. Generated text and timing may vary; inspect meaning instead of forcing identical text or timing.
 
 Save `murshid_live_outputs/evaluation_result.json`. **A successful submission:** all three actual cases, their generation settings and measurements, plus your manual assessment of whether each answer is supported by the synthetic context. Include failures and explain one improvement. An incorrect generated answer is evaluation evidence, while a download/import exception is a setup failure; handle the latter with [troubleshooting](../extensions/README.md#if-something-fails).
+
+
+### Save, upload, and submit your work
+
+- **Core lab:** save today's changes in your original cumulative project notebook. Update `notebooks/murshid.ipynb` in your own GitHub repository; do not create a new core project each day.
+- **This homework:** use its own Colab notebook and choose **File → Save a copy in Drive**. A suggested name is `day4_evaluation_your_name.ipynb`. Keep it separate from the core notebook and other homework.
+- Run and save your work, then choose **File → Download → Download .ipynb**. Upload the downloaded homework to `homework/day4_evaluation.ipynb` in your own repository. Include generated reports where available; keep printed results in your saved notebook.
+- Follow the [step-by-step upload and submission guide](git.md#upload-everything-to-your-own-github-repository). Check filenames, outputs and privacy before committing.
+- Submit your **own repository's root link** to the instructor through her specified channel, after checking that she can open it. Keep the same repository link for later updates. See [the final access checklist](git.md#submit-your-repository-link-to-the-instructor).

@@ -94,3 +94,12 @@ The JSON contains three `intentional_caught_errors`, each with `expected_rejecti
 This final snippet is an excerpt from the full report. The example catches the errors, so the successful run prints JSON rather than an unhandled traceback. These messages and outcomes are deterministic. `ModuleNotFoundError`, an interrupted runtime or a failed assertion is a different situation; use the [troubleshooting guide](../extensions/README.md#if-something-fails).
 
 **A successful submission:** the three observed rejections, your corrected valid input, and a short explanation of `raise`, `try` and `except`. This is a separate validation exercise; it does not silently change the functions in your other notebooks.
+
+
+### Save, upload, and submit your work
+
+- **Core lab:** save today's changes in your original cumulative project notebook. Update `notebooks/murshid.ipynb` in your own GitHub repository; do not create a new core project each day.
+- **This homework:** use its own Colab notebook and choose **File → Save a copy in Drive**. A suggested name is `day3_errors_your_name.ipynb`. Keep it separate from the core notebook and other homework.
+- Run and save your work, then choose **File → Download → Download .ipynb**. Upload the downloaded homework to `homework/day3_errors.ipynb` in your own repository. Include generated reports where available; keep printed results in your saved notebook.
+- Follow the [step-by-step upload and submission guide](git.md#upload-everything-to-your-own-github-repository). Check filenames, outputs and privacy before committing.
+- Submit your **own repository's root link** to the instructor through her specified channel, after checking that she can open it. Keep the same repository link for later updates. See [the final access checklist](git.md#submit-your-repository-link-to-the-instructor).

@@ -67,6 +67,12 @@ Slides 1–16 provide concepts and activities; slides 17–20 guide the day's la
 
 The code is provided in small labeled blocks. Type or copy each block into a new cell, understand it, and test it before continuing. Explain one decision to a partner and document a small change without weakening tests. Helpers for saving JSON, reference extraction, timing and export keep the lab realistic for a one-hour session. Running copied code alone does not demonstrate understanding.
 
+## Save your work and submit one repository link
+
+Keep **one cumulative Colab notebook for the core project** and **a separate Drive-saved Colab notebook for each homework**. Upload your project, completed homework and results into your own GitHub repository. Then send your repository's root link to the instructor through her specified submission channel, checking that she can access it.
+
+Follow the [beginner's guide to saving, uploading and submitting](docs/git.md): suggested filenames, folder structure, GitHub upload steps and a final access/privacy checklist are provided there.
+
 ## Extra homework by day
 
 Open the section for your current day. Each has the task, how to run, the expected result, and links to the solution and video. Use separate notebooks for these optional activities; keep your cumulative core project intact.

@@ -93,3 +93,12 @@ The final cell prints a report with these fields. This is an excerpt, not the en
 The answer shown is a reference observation. Your wording and inference time may vary. Check that your answer tells the user to use the reference number and does not invent fees, dates or application status. The report also includes measured time and tokenizer counts. Save `murshid_live_outputs/live_demo_result.json`.
 
 **A successful submission:** your separate notebook, your generated report, and two sentences explaining the input → tokens → model → answer flow. A download/import error is a setup problem: use [troubleshooting](../extensions/README.md#if-something-fails), rather than rewriting the output to resemble the reference.
+
+
+### Save, upload, and submit your work
+
+- **Core lab:** save today's changes in your original cumulative project notebook. Update `notebooks/murshid.ipynb` in your own GitHub repository; do not create a new core project each day.
+- **This homework:** use its own Colab notebook and choose **File → Save a copy in Drive**. A suggested name is `day1_real_model_your_name.ipynb`. Keep it separate from the core notebook and other homework.
+- Run and save your work, then choose **File → Download → Download .ipynb**. Upload the downloaded homework to `homework/day1_real_model.ipynb` in your own repository. Include generated reports where available; keep printed results in your saved notebook.
+- Follow the [step-by-step upload and submission guide](git.md#upload-everything-to-your-own-github-repository). Check filenames, outputs and privacy before committing.
+- Submit your **own repository's root link** to the instructor through her specified channel, after checking that she can open it. Keep the same repository link for later updates. See [the final access checklist](git.md#submit-your-repository-link-to-the-instructor).

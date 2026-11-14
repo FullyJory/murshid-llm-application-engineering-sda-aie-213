@@ -70,3 +70,34 @@ Tomorrow, continue in this notebook by adding input/output checks and a small re
 
 ## Explain one decision
 Before committing, explain to a partner one input, its route, its expected result, and one limitation. Make one small documented change without removing or weakening tests.
+
+
+## Extra homework
+
+Complete this optional practice **after today’s core lab**, in a **separate notebook**. Keep building the required four-day project in your original cumulative notebook; do not paste these extension cells into it.
+
+### Day 2 homework: validate and dispatch tool calls
+
+**Your task:** build the dispatcher described in Assignment A. Validate the call shape, allow only `check_status`, check ownership using the separate demo identity, and leave records unchanged. Predict each outcome before opening the solution.
+
+[Assignment instructions](../extensions/README.md#assignment-a--validate-and-route-structured-tool-calls) · [Solution notebook](../extensions/homework_tools.ipynb) · [Python code](../extensions/homework_tools.py) · [Full expected output](../extensions/expected/tools_result.json) · [Video and practice](../extensions/VIDEOS.md#2-prepare-for-assignment-a-structured-calls)
+
+**How to run:** open the separate solution notebook in Colab and run both code cells in order. Use Python 3/CPU; no packages, model download or API key are needed. Alternatively, from the repository directory run `python extensions/homework_tools.py`.
+
+### What your run should show
+
+The printed JSON reports `mode: "simulated_tool_protocol"`, `passed: 7`, `total: 7`, and `records_unchanged: true`. All seven case entries should have `passed: true`:
+
+| Case | Input being checked | Exact result |
+|---|---|---|
+| 1 | Owned reference | `{"code": "ok", "status": "under_review"}` |
+| 2 | Another user's reference | `{"code": "unavailable"}` |
+| 3 | Absent reference | `{"code": "unavailable"}` |
+| 4 | Disallowed tool | `{"code": "tool_not_allowed"}` |
+| 5 | Unexpected owner argument | `{"code": "invalid_arguments"}` |
+| 6 | Numeric reference instead of a string | `{"code": "invalid_arguments"}` |
+| 7 | String instead of a call object | `{"code": "invalid_call"}` |
+
+These outcomes are deterministic for the supplied inputs. Cases 2–7 are **correct refusals**, not runtime crashes. The call objects are supplied by hand; this exercise teaches Python dispatch and validation, not model-selected tools.
+
+**A successful submission:** your separate notebook, the seven-case output, and an explanation of why validation and authorization are different. If an assertion fails, compare the case's actual dictionary with the table and fix your code without weakening the expected result.

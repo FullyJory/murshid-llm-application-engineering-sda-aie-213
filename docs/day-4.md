@@ -63,3 +63,30 @@ Save and download files before ending the Colab session. A saved notebook is per
 
 ## Explain one decision
 Before committing, explain to a partner one input, its route, its expected result, and one limitation. Make one small documented change without removing or weakening tests.
+
+
+## Extra homework
+
+Complete this optional practice **after today’s core lab**, in a **separate notebook**. Keep building the required four-day project in your original cumulative notebook; do not paste these extension cells into it.
+
+### Day 4 homework: evaluate three real-model answers
+
+**Your task:** complete Assignment B using the three synthetic FAQ paraphrases. Generate each answer, record actual token counts and inference time, calculate the keyword indicator, and review the meaning of every answer.
+
+[Assignment instructions](../extensions/README.md#assignment-b--evaluate-three-real-model-faq-paraphrases) · [Solution notebook](../extensions/homework_evaluation.ipynb) · [Python code](../extensions/homework_evaluation.py) · [Full example output](../extensions/expected/evaluation_result.json) · [Video and practice](../extensions/VIDEOS.md#3-prepare-for-assignment-b-tokens-and-evaluation)
+
+**How to run:** open the evaluation notebook as a separate Colab copy, select Python 3/CPU, and run its three cells in order. Use the [real-model setup](../extensions/README.md#colab-setup-real-model-notebooks). The notebook is self-contained: it loads its own model and does not require Day 1 extension variables. Packages and weights need internet; no paid inference API or key is required.
+
+### What your run should show
+
+Your report includes `mode: "real_local_model"`, `total: 3`, `external_inference_api_calls: 0`, and cases `E01`, `E02`, `E03`. The recorded example has:
+
+| Case | Reference answer observation | Reference keyword indicator |
+|---|---|---|
+| E01 | `Use its reference number` | `true` |
+| E02 | `Reference number` | `true` |
+| E03 | `Use its reference number` | `true` |
+
+The example report's `keyword_hits` is `3`. This counts answers containing both “reference” and “number”; it is **not semantic accuracy**. Keep your actual count even if it differs. Each case also includes input tokens, output tokens including special tokens, and `inference_seconds`. Generated text and timing may vary; inspect meaning instead of forcing identical text or timing.
+
+Save `murshid_live_outputs/evaluation_result.json`. **A successful submission:** all three actual cases, their generation settings and measurements, plus your manual assessment of whether each answer is supported by the synthetic context. Include failures and explain one improvement. An incorrect generated answer is evaluation evidence, while a download/import exception is a setup failure; handle the latter with [troubleshooting](../extensions/README.md#if-something-fails).

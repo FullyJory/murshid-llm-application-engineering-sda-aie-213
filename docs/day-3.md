@@ -60,3 +60,37 @@ Tomorrow's work adds measurement and caching to **this same project**. Do not st
 
 ## Explain one decision
 Before committing, explain to a partner one input, its route, its expected result, and one limitation. Make one small documented change without removing or weakening tests.
+
+
+## Extra homework
+
+Complete this optional practice **after today’s core lab**, in a **separate notebook**. Keep building the required four-day project in your original cumulative notebook; do not paste these extension cells into it.
+
+### Day 3 homework: recognize a deliberate error and fix the input
+
+**Your task:** predict the validation result for `None`, blank text, and text longer than 500 characters. Then supply a valid question and explain why a caught rejection can be a successful test.
+
+[Error exercise instructions](../extensions/README.md#separate-input-error-practice) · [Solution notebook](../extensions/error_examples.ipynb) · [Python code](../extensions/error_examples.py) · [Full expected output](../extensions/expected/errors_result.json) · [Video and practice](../extensions/VIDEOS.md#4-recognize-and-correct-an-expected-error)
+
+**How to run:** open the separate error notebook in Colab and run its code cell. Python 3/CPU and the standard library are enough. Alternatively, run `python extensions/error_examples.py` from the repository directory.
+
+### What your run should show
+
+| Input | Exact caught error type and message | Your correction |
+|---|---|---|
+| `None` | `ValueError: Enter a non-empty question string.` | Use a question string |
+| Blank spaces | `ValueError: Enter a non-empty question string.` | Enter a nonblank question |
+| 501 characters | `ValueError: Use at most 500 characters.` | Shorten to at most 500 characters |
+
+The JSON contains three `intentional_caught_errors`, each with `expected_rejection: true`, followed by:
+
+```json
+{
+  "corrected_input": "accepted",
+  "checks": "passed"
+}
+```
+
+This final snippet is an excerpt from the full report. The example catches the errors, so the successful run prints JSON rather than an unhandled traceback. These messages and outcomes are deterministic. `ModuleNotFoundError`, an interrupted runtime or a failed assertion is a different situation; use the [troubleshooting guide](../extensions/README.md#if-something-fails).
+
+**A successful submission:** the three observed rejections, your corrected valid input, and a short explanation of `raise`, `try` and `except`. This is a separate validation exercise; it does not silently change the functions in your other notebooks.

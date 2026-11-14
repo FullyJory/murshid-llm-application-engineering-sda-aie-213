@@ -8,6 +8,17 @@ The extensions are optional practice **outside the one-hour daily lab**. Use the
 
 [Learning roadmap](OBJECTIVES.md) · [Extension videos](VIDEOS.md) · [Check your work](VERIFICATION.md)
 
+## Find your homework by training day
+
+Start with your day's homework section for the task, run instructions and expected output. Return here when you need detailed setup or the worked solution.
+
+| Day | Homework and run results |
+|---|---|
+| 1 | [Generate a real-model answer](../docs/day-1.md#extra-homework) |
+| 2 | [Validate and dispatch tool calls](../docs/day-2.md#extra-homework) |
+| 3 | [Recognize errors and correct inputs](../docs/day-3.md#extra-homework) |
+| 4 | [Evaluate three real-model answers](../docs/day-4.md#extra-homework) |
+
 ## Choose your activity
 
 | Activity | What actually runs | Prerequisites | Files |

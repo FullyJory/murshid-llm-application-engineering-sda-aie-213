@@ -61,3 +61,35 @@ Reopen **this same notebook**, rerun Day 1 from the top if the runtime reset, an
 
 ## Explain one decision
 Before committing, explain to a partner one input, its route, its expected result, and one limitation. Make one small documented change without removing or weakening tests.
+
+
+## Extra homework
+
+Complete this optional practice **after today’s core lab**, in a **separate notebook**. Keep building the required four-day project in your original cumulative notebook; do not paste these extension cells into it.
+
+### Day 1 homework: generate one answer with a real model
+
+**Your task:** run the small CPU model on the supplied synthetic FAQ. Identify the context, question, generated answer and model name. Explain how generating tokens differs from the core's fixed `FakeClient` answer.
+
+[Instructions and setup](../extensions/README.md#demonstration-watch-a-real-model-generate) · [Solution notebook](../extensions/live_model_demo.ipynb) · [Python code](../extensions/live_demo.py) · [Full example output](../extensions/expected/live_demo_result.json) · [Video and practice](../extensions/VIDEOS.md#1-prepare-for-the-real-model-demonstration)
+
+**How to run:** open the solution notebook in Colab using File → Open notebook → GitHub, save a separate copy, select Python 3/CPU, and run all four cells in order. Follow the [setup steps](../extensions/README.md#colab-setup-real-model-notebooks). Allow time for packages and model weights to download; no paid API or API key is required.
+
+### What your run should show
+
+The final cell prints a report with these fields. This is an excerpt, not the entire JSON:
+
+```json
+{
+  "mode": "real_local_model",
+  "model": "google/flan-t5-small",
+  "device": "cpu",
+  "question": "How can I check my application status?",
+  "answer": "Use its reference number",
+  "external_inference_api_calls": 0
+}
+```
+
+The answer shown is a reference observation. Your wording and inference time may vary. Check that your answer tells the user to use the reference number and does not invent fees, dates or application status. The report also includes measured time and tokenizer counts. Save `murshid_live_outputs/live_demo_result.json`.
+
+**A successful submission:** your separate notebook, your generated report, and two sentences explaining the input → tokens → model → answer flow. A download/import error is a setup problem: use [troubleshooting](../extensions/README.md#if-something-fails), rather than rewriting the output to resemble the reference.

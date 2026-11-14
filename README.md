@@ -67,6 +67,12 @@ Slides 1–16 provide concepts and activities; slides 17–20 guide the day's la
 
 The code is provided in small labeled blocks. Type or copy each block into a new cell, understand it, and test it before continuing. Explain one decision to a partner and document a small change without weakening tests. Helpers for saving JSON, reference extraction, timing and export keep the lab realistic for a one-hour session. Running copied code alone does not demonstrate understanding.
 
+## Extra homework by day
+
+Open the section for your current day. Each has the task, how to run, the expected result, and links to the solution and video. Use separate notebooks for these optional activities; keep your cumulative core project intact.
+
+[Day 1: real model](docs/day-1.md#extra-homework) · [Day 2: tools](docs/day-2.md#extra-homework) · [Day 3: error handling](docs/day-3.md#extra-homework) · [Day 4: evaluation](docs/day-4.md#extra-homework)
+
 ## Your learning library
 
 | I need… | Go to… |

@@ -4,7 +4,7 @@
 
 Use these resources **optionally, outside the daily one-hour lab**. Watch only what helps you, then follow the repository's current instructions. You do not need to finish a playlist to start the project. The lab guides, code and expected outputs are the source of truth for this course.
 
-**Resource check:** links were checked through indexed YouTube information, not watched in full. Labels below describe their learning purpose, not necessarily the exact video title. Some recordings are older, and menus, sign-in screens and available features may differ. Videos are external resources, not course-owned material or an endorsement. If a video suggests paid APIs, keys, extra software, GPU runtimes or model downloads, skip those steps: **none are needed for Murshid Mini**.
+**Use the videos alongside your notebook.** Focus on the concept named in each row, then return to the matching lab. Menus and library versions may differ from a recording; follow this repository's setup cells. Skip paid services and unrelated installations. The core mock uses no model downloads; the [independent model and homework videos](../extensions/VIDEOS.md) accompany separate exercises with their own setup.
 
 ## 1. Before Day 1: start from zero
 

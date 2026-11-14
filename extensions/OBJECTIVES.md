@@ -1,83 +1,81 @@
-# Extension objectives and honest coverage map
+# Your extension learning roadmap
 
-These optional activities extend the **20-slides-per-day** version of the four-day course. Slide numbers restart at 1 each day. They do not alter the original cumulative notebook or expand its one-hour daily lab. Keep extensions in independent notebooks and schedule them outside the core lab.
+Use these optional activities after the relevant core lessons. They run in **separate notebooks**, outside the daily one-hour lab. Keep your cumulative Murshid notebook unchanged.
 
-## Coverage labels
+[Start the extensions](README.md) · [Watch the video path](VIDEOS.md) · [Check your work](VERIFICATION.md)
 
-- **Actual:** the code really performs the named operation in the specified environment.
-- **Simulated:** deterministic data or hand-written calls stand in for a model/provider/system. The application logic executes, but the substituted service does not.
-- **Conceptual:** discussed in slides or documentation without a working integration here.
-- **Not covered:** beyond this package's implemented scope.
+## 1. See a real model generate text
 
-“Actual” does not mean production-ready. “Simulated” does not mean the validation code is imaginary: the checks execute, but the calls and identities are teaching fixtures.
+**Start after Day 1.** Open [the real-model demo](live_model_demo.ipynb).
 
-## Learning outcomes
-
-After the real-model demonstration, a learner should be able to:
-1. Distinguish loading model weights locally from invoking a hosted inference API.
-2. Identify input tokenization, model generation, and decoded output.
-3. Explain why a generated answer requires verification even when the program ran successfully.
-
-After Assignment A, a learner should be able to:
-1. Validate the structure and values of an untrusted tool-call object.
-2. Route only explicitly allowed tool names to a bounded read-only function.
-3. Keep identity/ownership checks separate from a model's or user's claimed intent.
-4. Test refusals and confirm that underlying records remain unchanged.
-
-After Assignment B, a learner should be able to:
-1. Run a small real-model evaluation on three synthetic FAQ paraphrases.
-2. Record actual tokenizer counts and elapsed time rather than invented metrics.
-3. Inspect answers and distinguish test-case success from broad model quality.
-4. Document configuration, observed results, and limitations without promising reproducibility of exact wording or speed.
-
-## Slide-by-slide alignment
-
-| Activity | Course slides | Practice and coverage |
+| Connect to your slides | What to do | Explain it in your own words |
 |---|---|---|
-| Real-model demo | Day 1, slides 1–6: model/application distinction and architecture | **Actual** CPU model generation; **conceptual** production architecture. The application wrapper and model are still separate responsibilities. |
-| Real-model demo | Day 1, slides 7–8 and 11–12: call/workflow, request, response | **Actual** local tokenizer/generation/decoding; **conceptual** hosted provider request/response behavior. |
-| Real-model demo | Day 1, slide 10: API | Explains the difference between a local Python model interface and a hosted HTTP API. **No hosted model API integration.** |
-| Real-model demo | Day 1, slides 13–14: mock client and model options | Contrast **simulated** `FakeClient` with **actual** FLAN-T5 small generation. Commercial-provider comparison remains **conceptual**. |
-| Real-model demo | Day 1, slide 5: hallucination | Learners inspect output and identify possible failure; this is not a comprehensive hallucination benchmark. |
-| Assignment A | Day 2, slides 1–8: structured outputs, JSON, contracts, validation | **Actual** schema/value checks on **simulated** structured calls; no guarantee that a real model will emit valid JSON. |
-| Assignment A | Day 2, slides 9–12: function calling and tool cycle | **Actual** allowlist routing and Python function invocation; call selection is **simulated**. Native provider function calling is **not implemented**. |
-| Assignment A | Day 2, slides 13–15: records, read-only access, end-to-end flow | **Actual** checks over synthetic data, with **simulated** identity; production authentication is **not covered**. |
-| Assignment A | Day 3, slides 7–10: guardrails and output checking | **Actual** bounded validation and refusal tests. Complete prompt-injection defense and personal-data protection are **not established**. |
-| Assignment B | Day 3, slides 11–15: golden cases, comparison, pass rate, diagnosis | **Actual** generation and reporting for three cases, distinct from the core's ten mock regression cases. The small sample is not a benchmark. |
-| Assignment B | Day 4, slides 1–6: quality, cost, time, per-request measures | **Actual** token counts and measured time; API billing/cost calculations remain **conceptual or explicitly hypothetical**. No billed API call occurs. |
-| Assignment B | Day 4, slides 14–15: evaluation report and peer review | **Actual** report creation and learner review, including failures and limitations. |
-| All extensions | Each day's slides 17–20: core lab | Separate optional activities. They neither replace the core checkpoint nor become mandatory additions to its hour. |
+| Day 1, slides 1–6 | Follow the input through the application to the model. | How is an application different from its model? |
+| Day 1, slides 7–8 and 11–12 | Find tokenization, generation, and decoding in the code. | What goes in, and what comes out? |
+| Day 1, slides 10 and 13–14 | Compare the local model call with `FakeClient`. | Why does this demo need model weights, while the core does not? |
+| Day 1, slide 5 | Read the answer critically. | Is the answer correct and supported, or merely fluent? |
 
-## Deliberate error outputs
+Here, downloaded **FLAN-T5 small** weights generate tokens on CPU. The core's `FakeClient` instead returns fixed answers. This demo uses a local Python model interface, not a paid hosted inference API. You do not need an API key.
 
-The independent [input-error exercise](error_examples.ipynb) demonstrates caught `ValueError` outputs and a corrected accepted question. It complements Day 1 input handling and Day 3 validation. It does not automatically add that validation to all real-model functions. Compare its [recorded results](expected/errors_result.json).
+**Your checkpoint:** show one generated answer, identify the three processing steps, and describe one limitation. Compare the report structure with [the demo reference](expected/live_demo_result.json); do not require identical wording or timing.
 
-Assignment A's `invalid_call`, `invalid_arguments`, `tool_not_allowed`, and `unavailable` results are expected application-level refusals. They differ from an unexpected Python traceback caused by missing packages or a failed model download. Learners must explain this distinction rather than treating every refusal as an error to remove.
+## 2. Control a read-only tool
 
-Assignment B's recorded 3/3 keyword hits are lexical matches for those three cases only, not a claim of semantic accuracy, broad objective coverage, or readiness for deployment.
+**Start after Day 2.** Attempt [Assignment A](README.md#assignment-a--validate-and-route-structured-tool-calls), then use [the solution notebook](homework_tools.ipynb) or [Python solution](homework_tools.py).
 
-## What stays in the core
+| Connect to your slides | What to do | Explain it in your own words |
+|---|---|---|
+| Day 2, slides 1–8 | Validate the structured call and its arguments. | Why can valid JSON still contain an invalid request? |
+| Day 2, slides 9–12 | Route only an allowed tool name to the read-only function. | Why should arbitrary tool names be rejected? |
+| Day 2, slides 13–15 | Check the synthetic record's ownership. | Why is a reference number not proof of ownership? |
+| Day 3, slides 7–10 | Run invalid-input and refusal cases. | When is a rejected request the correct result? |
 
-The original four-day project continues to teach a deterministic response contract, validated tickets, a read-only synthetic status tool, guarded workflow, ten selected regression cases, and a versioned exact cache for public/general questions. Its deterministic outputs make beginner debugging easier. The extension model must not silently replace `FakeClient` in that core notebook: such a replacement changes the tests and the meaning of the expected results.
+You supply structured calls by hand; a model does not choose the tool in this exercise. The dispatcher, validation, and ownership checks execute as ordinary Python. The demo users and records are fictional, so keep real service data out.
 
-The core's ten-case report and Assignment B's three-case report are **different evaluations**. Keep their filenames, inputs, and summaries separate. Do not combine their scores into one “accuracy” figure.
+**Your checkpoint:** run the tool scenarios, confirm that records are unchanged, and explain the difference between validation and authorization. Compare with [the tool reference results](expected/tools_result.json).
 
-## What this extension does not implement
+## 3. Read an error and correct its cause
 
-- Hosted commercial model API authentication, billing, retries, rate-limit management, or production provider integration.
-- Native provider tool/function calling or an autonomous model choosing and executing tools.
-- Real user authentication, Ministry system access, real application records, or mutation operations.
-- Fine-tuning, model training from scratch, retrieval-augmented generation, or a production vector database.
-- A general prompt-injection prevention system or regulatory/security certification.
-- Production deployment, vLLM serving, scaling, service monitoring, or availability guarantees.
-- A validated comparison between multiple models, an Arabic benchmark, or general model-quality claims from three examples.
+**Use alongside Days 1–3.** Open [the input-error practice](error_examples.ipynb) or read [its Python solution](error_examples.py).
 
-Day 4's caching objectives remain implemented in the core mock project. These independent extensions do not claim to benchmark real-model cache speedups or financial savings.
+1. Predict what will happen for `None`, a blank question, and a question longer than 500 characters.
+2. Run the exercise and read the caught `ValueError` messages.
+3. Replace the input with a nonblank question of at most 500 characters.
+4. Show that the corrected question is accepted.
 
-## How to judge completion
+This is an independent validation exercise. Its function does not automatically become part of your other model functions.
 
-For the demo, require a successful documented generation attempt and a correct explanation of its boundaries, not a particular answer. If execution is blocked by downloads or runtime limits, record that blocker rather than claiming a completed model run.
+**Your checkpoint:** distinguish an intended validation rejection from a setup problem such as a missing package. Use [the error reference results](expected/errors_result.json) and the [self-check](VERIFICATION.md).
 
-For Assignment A, use the supplied deterministic validation/authorization cases and unchanged-record checks. For Assignment B, require a complete, honest observed report for all three inputs, configuration details, and a short error analysis. A lower answer-quality score is an observation to explain, not a reason to fabricate a passing result.
+## 4. Evaluate three real-model answers
 
-The supplied solutions and files in [`expected/`](expected/) are comparison references. A reference generated elsewhere is not evidence that the learner's runtime passed. Learners must run, save, and explain their own results.
+**Start after Days 3–4 and the real-model demo.** Attempt [Assignment B](README.md#assignment-b--evaluate-three-real-model-faq-paraphrases), then use [the solution notebook](homework_evaluation.ipynb) or [Python solution](homework_evaluation.py).
+
+| Connect to your slides | What to do | Explain it in your own words |
+|---|---|---|
+| Day 3, slides 11–15 | Run cases `E01`, `E02`, and `E03` and inspect every answer. | What does each case test? |
+| Day 4, slides 1–6 | Record tokenizer counts and elapsed time. | Why are word counts different from token counts? |
+| Day 4, slides 14–15 | Save a report and review it with a partner. | Which answer needs improvement, and why? |
+
+The three inputs are synthetic FAQ paraphrases. Preserve the observed answers, even when they are poor. The keyword check is a small lexical test, not a measurement of general intelligence or semantic accuracy. Time and output can vary across environments and software versions.
+
+**Your checkpoint:** save all three cases with their settings, answers, token counts, timing, and keyword results. Compare the fields and calculation method with [the evaluation reference](expected/evaluation_result.json). Explain one limitation and one improvement.
+
+## Keep your results separate
+
+- Your core notebook has ten fixed mock regression cases and a public-question cache experiment.
+- Assignment B has three real-model FAQ cases.
+- Assignment A tests hand-written tool calls.
+- The error exercise tests input validation.
+
+Do not combine these into one “model accuracy” percentage. Each result answers a different question. Do not replace the core's `FakeClient` with a real model during these activities: that would change the core's expected outputs and test behavior.
+
+## Finish by teaching it back
+
+Show a partner:
+1. One real generated answer and your assessment of it.
+2. One valid tool result and one correctly rejected request.
+3. One deliberate error and the corrected input.
+4. A three-case evaluation report with an honest explanation of its results.
+
+Use [the self-check](VERIFICATION.md) before saving your extension work. These are small learning applications, not production services; use synthetic data and keep credentials and private records out of your repository.

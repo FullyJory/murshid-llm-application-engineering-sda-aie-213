@@ -1,10 +1,12 @@
 # Optional extensions: a real model and two independent assignments
 
-These extensions complement **LLM Application Engineering (SDA-AIE-213)**. They are separate from the four-day Murshid core project. The core remains a free, deterministic Python simulation with no model download. Nothing in this folder replaces or changes it.
+These extensions complement **LLM Application Engineering (SDA-AIE-213)**. They are separate from the four-day Murshid core project. The core remains a free, deterministic Python simulation with no model download. Keep it as your completed core project.
 
 **Do not add these cells to your cumulative `murshid.ipynb`.** Keep your original project and daily results. For an extension, open its own notebook and save a separate copy in Google Drive. Use a separate runtime, or disconnect the core runtime before beginning an extension so that package installation cannot affect your core session.
 
-The extensions are optional practice **outside the one-hour daily lab**. They are not extra requirements for completing the original project. There is no additional grading weight defined here.
+The extensions are optional practice **outside the one-hour daily lab**. Use them to practice after completing the corresponding core concepts.
+
+[Learning roadmap](OBJECTIVES.md) · [Extension videos](VIDEOS.md) · [Check your work](VERIFICATION.md)
 
 ## Choose your activity
 
@@ -15,7 +17,7 @@ The extensions are optional practice **outside the one-hour daily lab**. They ar
 | Input-error practice | Caught Python validation errors and a corrected input | Standard library only | [Practice notebook](error_examples.ipynb), [Python solution](error_examples.py) |
 | Assignment B: small evaluation | FLAN-T5 small generates answers to three synthetic FAQ paraphrases; code records tokens and time | Demo; core Days 3–4 | [Solution notebook](homework_evaluation.ipynb), [Python solution](homework_evaluation.py) |
 
-The real-model examples do not require a paid API or API key. They **do require downloading model weights and Python packages**. A free Colab CPU runtime is the intended environment, but availability, download speed, memory, and execution time depend on the service and your session. This is not a promise of unlimited free resources or error-free execution.
+The real-model examples do not require a paid API or API key. They **do require downloading model weights and Python packages**. A free Colab CPU runtime is the intended environment, but availability, download speed, memory, and execution time depend on the service and your session. Save your work before disconnecting and allow time for the first download.
 
 ## Colab setup: real-model notebooks
 
@@ -28,7 +30,7 @@ The real-model examples do not require a paid API or API key. They **do require 
 7. Run the remaining code cells in order. The model-loading cell downloads **`google/flan-t5-small`** from Hugging Face on first use. It is not a hosted inference request. Do not provide personal data, service records, or secrets.
 8. Wait for model loading to finish before generating. Save the notebook and download any generated results from Colab's Files panel before ending the session.
 
-The code was tested locally with PyTorch 2.6.0; that is not a claim that this exact notebook was executed in a hosted Colab session. If you encounter a dependency mismatch, reset or replace the **optional** runtime and rerun its setup rather than altering your core notebook.
+If you encounter a dependency mismatch, reset or replace the **optional** runtime and rerun its setup rather than altering your core notebook.
 
 The notebooks contain code and outputs; this guide contains the instructions and interpretation. Read the comments in each code cell before running it. Do not paste shell commands into a Python cell unless the provided notebook uses the appropriate notebook syntax.
 
@@ -82,7 +84,7 @@ Evaluate the real model on the supplied three synthetic FAQ paraphrases. This sm
 3. Generate an answer for each input, preserving each input, output, and case identifier (`E01`, `E02`, `E03`) together in the report so that each case can be inspected.
 4. Record actual tokenizer-based input/output token counts and measured execution time with units. Do not estimate tokens by word count.
 5. Compare answers with the reference criteria and inspect disagreements manually. A simple automated score is not a substitute for semantic review.
-6. Report all three cases, including failures, and state what the evaluation does **not** establish.
+6. Report all three cases, including failures, and explain one limitation of using such a small test set.
 
 ### What to submit
 
@@ -138,8 +140,8 @@ The recorded evaluation run has **3/3 keyword hits**, with answers `Use its refe
 - **The generated answer looks wrong:** record it and discuss the failure. Successful execution does not imply a correct answer.
 - **Your values differ from reference output:** first compare settings and software versions; timing differences are normal. Preserve the actual observation rather than editing it to match.
 
-These exception names describe possible failure categories, not fabricated tracebacks or a promise of an exact version-specific message. There is no guarantee of zero errors. Keep the error message and the last completed step when asking the instructor for help, and remove any private information from screenshots.
+The exact wording of environment errors can vary by software version. Keep the error message and the last completed step when asking the instructor for help, and remove any private information from screenshots.
 
-## Coverage and attribution
+## Continue learning
 
-Read [the objective and slide mapping](OBJECTIVES.md) for the distinction between real execution, simulation, and conceptual coverage. Course context: **LLM Application Engineering — SDA-AIE-213**; instructor: **Meaad Al-Marri**. [SDAIA Academy on GitHub](https://github.com/SDAIAAcademy). This attribution does not imply endorsement of the implementation.
+Use [the learning roadmap](OBJECTIVES.md) to connect each activity to your slides, follow [the extension video path](VIDEOS.md), and complete [the self-check](VERIFICATION.md). Course context: **LLM Application Engineering — SDA-AIE-213**; instructor: **Meaad Al-Marri**. [SDAIA Academy on GitHub](https://github.com/SDAIAAcademy). This attribution does not imply endorsement of the implementation.

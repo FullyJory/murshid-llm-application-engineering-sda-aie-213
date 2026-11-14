@@ -26,9 +26,9 @@ Day 4 places an exact cache around **only the two known public FAQs**. Status re
 
 Latency measures local Python execution, not model inference. UUIDs and times vary. Exact cache counters and status codes are deterministic when the experiment starts with a cleared cache. The illustrative token-cost calculation is USD 0.0036/request using invented prices; actual external API usage/spend is zero. No actual financial saving or speed target is asserted.
 
-## Boundaries and future work
+## Use each learning environment correctly
 
-No live LLM, framework, database, web server, deployment, real authentication, production rate limiting, real tokenization or comprehensive redaction is included. A future live-provider adapter would require new dependency, cost, privacy, evaluation and security decisions. Do not just replace the mock and assume the system is production-ready.
+Use the core mock to trace requests, validate contracts and compare repeatable outputs. Explore actual model inference in the [separate real-model notebook](../extensions/README.md), keeping your cumulative project intact. Keep synthetic identities and records in your exercises, protect private information, and review generated answers before trusting them. Treat the keyword guards as examples to reason about rather than comprehensive security controls.
 
 ## Test strategy
 

@@ -23,6 +23,10 @@ A small fictional service assistant that answers known service questions, reads 
 
 > **Know what this project is:** `mode=mock`. `FakeClient` is a finite, deterministic simulator, **not a live language model**. You are learning the engineering around an LLM-shaped interface. The notebook does not train a model, assess live LLM quality or implement production security. All data is synthetic.
 
+## Independent extensions and extra homework
+
+The required four-day mock project below remains unchanged. For a separately runnable real CPU model demonstration, additional tool-protocol and evaluation homework, worked solutions, observed outputs and intentional error examples, open the [independent extension learning path](extensions/README.md). These optional activities use separate notebooks outside the core lab hour. Real-model activities require library and model downloads; no API key or paid inference service is required. See the [objective coverage map](extensions/OBJECTIVES.md) for what is actually implemented and what remains conceptual.
+
 ## Start here
 
 **New to Python, Colab or GitHub?** Begin with the [ordered video learning path](docs/videos.md), then return here. Videos are optional preparation and reinforcement, not extra graded work or prerequisites involving paid services.

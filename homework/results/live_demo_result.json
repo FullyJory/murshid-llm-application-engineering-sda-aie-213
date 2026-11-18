@@ -12,7 +12,7 @@
   "answer": "Use its reference number",
   "input_tokens": 34,
   "output_tokens_including_special": 6,
-  "inference_seconds": 0.088,
+  "inference_seconds": 0.13,
   "external_inference_api_calls": 0,
   "semantic_review": "Confirm the reply is supported by the context; check for invented claims."
 }

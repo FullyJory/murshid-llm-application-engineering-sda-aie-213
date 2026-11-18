@@ -1,4 +1,4 @@
-name: Generate real homework model JSON
+name: Verify and execute homework notebooks
 on:
   push:
     paths:
@@ -8,9 +8,9 @@ on:
 permissions:
   contents: write
 jobs:
-  generate:
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -20,15 +20,29 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install 'torch>=2.2,<3' 'transformers==4.49.0' 'sentencepiece==0.2.1' 'safetensors>=0.4.3'
-      - name: Run actual FLAN-T5 inference
+          python -m pip install 'torch>=2.2,<3' 'transformers==4.49.0' 'sentencepiece==0.2.1' 'safetensors>=0.4.3' 'nbclient>=0.10,<1' 'nbformat>=5.9,<6' ipykernel
+      - name: Run actual FLAN-T5 inference and save JSON
         run: python homework/run_model_results.py
-      - name: Commit generated JSON
+      - name: Execute all four submitted notebooks and save real outputs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import nbformat
+          from nbclient import NotebookClient
+          for name in ('day1_real_model', 'day2_tools', 'day3_errors', 'day4_evaluation'):
+              path = Path('homework') / (name + '.ipynb')
+              notebook = nbformat.read(path, as_version=4)
+              NotebookClient(notebook, timeout=240, kernel_name='python3', resources={'metadata': {'path': '.'}}).execute()
+              nbformat.write(notebook, path)
+              assert all(cell.get('execution_count') is not None for cell in notebook.cells if cell.cell_type == 'code'), name
+              print(f'{name}: executed successfully and saved notebook outputs')
+          PY
+      - name: Commit verified notebooks and JSON
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add homework/results/live_demo_result.json homework/results/evaluation_result.json
+          git add homework/*.ipynb homework/results/live_demo_result.json homework/results/evaluation_result.json
           if ! git diff --cached --quiet; then
-            git commit -m "Save measured model homework JSON results"
+            git commit -m "Save executed notebooks and measured JSON outputs"
             git push
           fi

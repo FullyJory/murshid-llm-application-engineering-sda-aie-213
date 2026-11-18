@@ -50,6 +50,22 @@ No API keys, GPU, model downloads, or additional packages are required.
 
 This implementation uses a deterministic **FakeClient**, not a live language model. All data is synthetic, and the application is intended for educational purposes rather than production use.
 
+
+## Submitted Homework (Days 1–4)
+
+The four extra-homework exercises are separate from the cumulative Murshid Mini project. Each notebook has been executed and includes saved cell outputs; generated JSON reports are committed under [`homework/results/`](homework/results/).
+
+| Day | Exercise | Notebook | JSON report |
+|---|---|---|---|
+| 1 | Real-model generation (FLAN-T5) | [Day 1 notebook](homework/day1_real_model.ipynb) | [live_demo_result.json](homework/results/live_demo_result.json) |
+| 2 | Validated tool dispatch (7/7 cases) | [Day 2 notebook](homework/day2_tools.ipynb) | [tools_result.json](homework/results/tools_result.json) |
+| 3 | Expected input errors (3 caught cases) | [Day 3 notebook](homework/day3_errors.ipynb) | [errors_result.json](homework/results/errors_result.json) |
+| 4 | Real-model evaluation (3 FAQ paraphrases) | [Day 4 notebook](homework/day4_evaluation.ipynb) | [evaluation_result.json](homework/results/evaluation_result.json) |
+
+Days 1 and 4 run the open-source `google/flan-t5-small` locally on CPU. They require installing Python packages and downloading model weights, but no paid API keys. The other two homework notebooks use Python's standard library only. The Day 4 keyword indicator is **not** a semantic accuracy metric; case-by-case context support notes are included in its notebook output.
+
+The homework is reproducible through [`homework/run_model_results.py`](homework/run_model_results.py) and [GitHub Actions](.github/workflows/generate-homework-results.yml).
+
 ## Acknowledgment
 
 This project was completed as part of the **LLM Application Engineering (SDA-AIE-213)** training program under the guidance of **Meaad Al-Marri**.

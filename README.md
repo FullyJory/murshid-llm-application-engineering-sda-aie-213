@@ -4,11 +4,12 @@
 <div align="center">
 
 # Areej Al-Osaimi
+
 ### Murshid Mini · LLM Application Engineering
 
 **King Saud University · Computer Science**
 
-**SDA-AIE-213 · SDAIA Academy**
+**SDA-AIE-213 · [SDAIA Academy](https://github.com/SDAIAAcademy)**
 
 </div>
 
@@ -53,6 +54,6 @@ This implementation uses a deterministic **FakeClient**, not a live language mod
 
 This project was completed as part of the **LLM Application Engineering (SDA-AIE-213)** training program under the guidance of **Meaad Al-Marri**.
 
-Special acknowledgment to **[SDAIA Academy](https://github.com/SDAIAAcademy)** and the **[original Murshid Mini repository](https://github.com/almiyead-rgb/murshid-llm-application-engineering-sda-aie-213)** for the educational materials and learning resources.
+Special thanks to **[SDAIA Academy](https://github.com/SDAIAAcademy)** and **Meaad Al-Marri** for providing this valuable learning opportunity and guidance throughout the program.
 
 This educational implementation does not imply official SDAIA Academy certification or endorsement.

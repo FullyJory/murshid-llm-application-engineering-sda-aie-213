@@ -1,0 +1,50 @@
+{
+  "mode": "real_local_model",
+  "model": "google/flan-t5-small",
+  "device": "cpu",
+  "context": "You can check your application status using its reference number.",
+  "generation": {
+    "do_sample": false,
+    "num_beams": 1,
+    "max_new_tokens": 48
+  },
+  "metric": "reference+number keyword indicator, not semantic accuracy",
+  "keyword_hits": 3,
+  "total": 3,
+  "external_inference_api_calls": 0,
+  "billed_api_cost_usd": 0,
+  "cases": [
+    {
+      "id": "E01",
+      "question": "How can I check my application status?",
+      "answer": "Use its reference number",
+      "input_tokens": 34,
+      "output_tokens_including_special": 6,
+      "inference_seconds": 0.088,
+      "reference_keyword_hit": true,
+      "automatic_semantic_heuristic": "Supported by synthetic context"
+    },
+    {
+      "id": "E02",
+      "question": "What do I need to check my application status?",
+      "answer": "Reference number",
+      "input_tokens": 36,
+      "output_tokens_including_special": 4,
+      "inference_seconds": 0.04,
+      "reference_keyword_hit": true,
+      "automatic_semantic_heuristic": "Supported by synthetic context"
+    },
+    {
+      "id": "E03",
+      "question": "How can I find out the status of my application?",
+      "answer": "Use its reference number",
+      "input_tokens": 37,
+      "output_tokens_including_special": 6,
+      "inference_seconds": 0.058,
+      "reference_keyword_hit": true,
+      "automatic_semantic_heuristic": "Supported by synthetic context"
+    }
+  ],
+  "limitation": "Three synthetic English examples cannot measure general accuracy or security.",
+  "improvement": "Add diverse questions, answer-grounding checks, and negative cases."
+}

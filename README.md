@@ -3,7 +3,7 @@
 
 <div align="center">
 
-# Areej Al-Osaimi
+# Jory Alshaalan
 
 ### Murshid Mini · LLM Application Engineering
 
